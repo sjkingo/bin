@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RES="1650x1000"
+RES="2560x1390"
 
 if [ $# -lt 1 ] || [ $# -gt 3 ]; then
     echo "Usage: $0 [-p] host [user] [domain]"
