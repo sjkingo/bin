@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+if [ $# -ne 1 ] ; then
+    echo "$0 - converts a hg repo in the working directory to a git repo at the path given"
+    echo 
+    echo "Usage: $0 /path/to/new/git/repo"
+    exit 1
+fi
+
+hg_repo="`pwd`"
+git_repo="$1"
+
+if [ ! -d $hg_repo/.hg ] ; then
+    echo "Error: no hg repository in current directory ($hg_repo)"
+    exit 2
+fi
+
+if [ -e $git_repo ] ; then
+    echo "Error: path to git repo must not exist"
+    exit 2
+fi
+
+git init $git_repo
+cd $git_repo
+~/bin/fast-export/hg-fast-export.sh -r $hg_repo
+git checkout HEAD
+
+if [ -f .hgignore ] ; then
+    echo "Warning: .hgignore exists in repo"
+fi
