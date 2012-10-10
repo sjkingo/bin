@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$1" = "" ] ; then
+    echo "Usage: $0 file1 [file2, ...]" 1>&2
+    exit 1
+fi
+
+out="`mktemp --suffix=.pdf`"
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$out" $@
+echo "$0 wrote $out from $@"
