@@ -15,10 +15,10 @@ CONNECT_TIMEOUT="5"
 RUN_CMD="(hostname ; uptime)"
 
 # How many failures are allowed before giving up. This is the maximum number of
-# emails the user will receive.
+# failure emails the user will receive.
 THRESHOLD="3"
 
-# Email address for notifications
+# Email address for notifications (failure, giving up, reconnected).
 EMAIL_TO="sam@sjkwi.com.au"
 
 # -- do not modify below this line -- #
