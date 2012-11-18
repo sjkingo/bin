@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#/ ping-ssh: "pings" a network device via ssh to verify it is running.
+#/ ping_ssh: "pings" a network device via ssh to verify it is running.
 #/ Sends email notifications if the host is not responding, or the remote
 #/ command could not be executed.
 
@@ -24,7 +24,7 @@ EMAIL_TO="sam@sjkwi.com.au"
 # -- do not modify below this line -- #
 
 SSH_OPTS="-oBatchMode=yes -oConnectTimeout=$CONNECT_TIMEOUT"
-FAIL_FILE="/tmp/ping-ssh.fail"
+FAIL_FILE="/tmp/ping_ssh.fail"
 
 # temp log file
 TMP_LOG="`mktemp`"   
@@ -41,16 +41,16 @@ function send_email () {
     echo "From: $USER@`hostname`
 To: $EMAIL_TO
 Subject: $subj
-X-Mailer: ping-ssh on `hostname`
+X-Mailer: ping_ssh on `hostname`
 
 Hello,
 
-The ping-ssh script running on `hostname` has the following notification for you:
+The ping_ssh script running on `hostname` has the following notification for you:
 
 `cat $TMP_LOG`
 
 --
-ping-ssh (pid $$)
+ping_ssh (pid $$)
 SSH_HOST=$SSH_HOST
 CONNECT_TIMEOUT=$CONNECT_TIMEOUT
 THRESHOLD=$THRESHOLD
