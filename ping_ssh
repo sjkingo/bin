@@ -2,7 +2,9 @@
 
 #/ ping_ssh: "pings" a network device via ssh to verify it is running.
 #/ Sends email notifications if the host is not responding, or the remote
-#/ command could not be executed.
+#/ command could not be executed. The script saves state across invocations,
+#/ and is designed to run in crontab at regular intervals (no more frequent
+#/ than CONNECT_TIMEOUT+1 seconds).
 
 # The SSH host line to connect to. Public-key authentication is required.
 SSH_HOST="ash"
