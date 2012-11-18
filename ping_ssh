@@ -12,7 +12,7 @@ SSH_HOST="ash"
 CONNECT_TIMEOUT="5"
 
 # Remote command(s) to run. If multiple, place them in a subshell.
-RUN_CMD="(hostname && uptime)"
+RUN_CMD="(hostname ; uptime)"
 
 # How many failures are allowed before giving up. This is the maximum number of
 # emails the user will receive.
