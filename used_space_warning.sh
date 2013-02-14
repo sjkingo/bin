@@ -4,7 +4,7 @@
 THRESHOLD=50
 
 #                                                perc    mnt    dev
-df -H | egrep -v '^Filesystem|tmpfs' | awk '{print $5 " " $6 " " $1}' | while read output ;
+df -H | egrep -v '^Filesystem|tmpfs|vmware-sam' | awk '{print $5 " " $6 " " $1}' | while read output ;
 do
     perc=$(echo $output | awk '{print $1}' | cut -d'%' -f1)
     mnt=$(echo $output | awk '{print $2}')
