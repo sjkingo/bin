@@ -1,0 +1,3 @@
+#!/bin/bash
+COOKIE_FILE=/tmp/youtube-dl-cookies.txt
+mplayer -quiet -cookies -cookies-file ${COOKIE_FILE} $(youtube-dl -g --cookies ${COOKIE_FILE} $*) >/dev/null 2>&1
