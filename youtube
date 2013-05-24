@@ -1,3 +1,11 @@
 #!/bin/bash
+
+# Streams the Youtube video given as an argument in mplayer,
+# sending mplayer's stdout and stderr to a GTK popup
+#
+# Requires: youtube-dl, zenity, mplayer
+
 COOKIE_FILE=/tmp/youtube-dl-cookies.txt
-mplayer -quiet -cookies -cookies-file ${COOKIE_FILE} $(youtube-dl -g --cookies ${COOKIE_FILE} $*) >/dev/null 2>&1
+
+mplayer -quiet -cookies -cookies-file ${COOKIE_FILE} $(youtube-dl -g --cookies ${COOKIE_FILE} $*) 2>&1 \
+    | zenity --text-info --title "Starting Youtube stream in mplayer.." --width 600 --height 800
