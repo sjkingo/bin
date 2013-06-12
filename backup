@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Path to back up.
+TO_BACKUP="/home/sam"
+
+# Paths under TO_BACKUP to exclude from the backup. Globs are not supported.
+EXCLUDE="android-sdk Downloads Music Pictures .cache .ccache .fontconfig .gem .gmail-backup .kde .thumbnails .wine"
+
+# Location to back up to.
+REMOTE_SERVER="ssh://sam@ash.sjkwi.com.au//home/sam/.lemon-bkp/"
+
+(for i in $EXCLUDE ; do
+    echo "$TO_BACKUP/$i"
+done) | duplicity \
+        --encrypt-key $GPGKEY \
+        --sign-key $GPGKEY \
+        --use-agent \
+        --exclude-filelist-stdin \
+        --asynchronous-upload \
+        $TO_BACKUP \
+        $REMOTE_SERVER
