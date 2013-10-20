@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+cd /home/sam/android-sdk/tools
+LD_PRELOAD=`pwd`/lib/lib64OpenglRender.so ./emulator64-arm -avd $1
