@@ -12,10 +12,12 @@ function profile {
         HOST="ps.wfsltd.com.au"
         USER="Administrator"
         DOMAIN="WFSLTD"
+        CONSOLE="yes"
     elif [ "$1" = "ws" ] ; then
         HOST="ws.wfsltd.com.au"
         USER="Administrator"
         DOMAIN="WFSLTD"
+        CONSOLE="yes"
     elif [ "$1" = "itee" ] ; then
         HOST="termserv.eait.uq.edu.au"
         USER="uqskings"
