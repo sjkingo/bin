@@ -28,6 +28,11 @@ function profile {
         USER="Administrator"
         DOMAIN="MEDICAL"
         CONSOLE="yes"
+    elif [ "$1" = "dpharm" ] ; then
+        HOST="apharm.lnk.telstra.net"
+        USER="skingston"
+        DOMAIN="MINFOS.LOCAL"
+        CONSOLE="no"
     else
         echo "$0: profile \`$1\` unknown"
         exit 2
