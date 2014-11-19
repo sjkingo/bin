@@ -16,13 +16,8 @@ function profile {
     elif [ "$1" = "ws" ] ; then
         HOST="ws.wfsltd.com.au"
         USER="Administrator"
-        DOMAIN="WFSLTD"
+        DOMAIN="WS"
         CONSOLE="yes"
-    elif [ "$1" = "itee" ] ; then
-        HOST="termserv.eait.uq.edu.au"
-        USER="uqskings"
-        DOMAIN="KRB5.UQ.EDU.AU"
-        CONSOLE="no"
     elif [ "$1" = "carmed" ] ; then
         HOST="carsel1.lnk.telstra.net"
         USER="Administrator"
@@ -33,9 +28,15 @@ function profile {
         USER="skingston"
         DOMAIN="MINFOS.LOCAL"
         CONSOLE="no"
+    elif [ "$1" = "prime" ] ; then
+        HOST="aph1483135.lnk.telstra.net"
+        USER="skingston"
+        DOMAIN="PRIMECO"
+        CONSOLE="yes"
     else
-        echo "$0: profile \`$1\` unknown"
-        exit 2
+        echo "$0: profile '$1' unknown, using as hostname instead"
+        HOST="$1"
+        CONSOLE="no"
     fi
 }
 
