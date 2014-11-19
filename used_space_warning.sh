@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # any filesystem with used space above this % will trigger a warning
-THRESHOLD=50
+THRESHOLD=75
 
 #                                                perc    mnt    dev
 df -H | egrep -v '^Filesystem|tmpfs|vmware-sam' | awk '{print $5 " " $6 " " $1}' | while read output ;
