@@ -1,6 +1,8 @@
 #!/bin/bash
 
+photos="$1"
+
 while true ; do
-    awsetbg -r /home/sam/Pictures/Wallpapers/2560x1440/
+    awsetbg -r "$photos"
     sleep 10m
 done
