@@ -10,9 +10,9 @@ fi
 function profile {
     if [ "$1" = "ps" ] ; then
         HOST="ps.wfsltd.com.au"
-        USER="Administrator"
+        USER="skingston"
         DOMAIN="WFSLTD"
-        CONSOLE="yes"
+        CONSOLE="no"
     elif [ "$1" = "ws" ] ; then
         HOST="ws.wfsltd.com.au"
         USER="Administrator"
