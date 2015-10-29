@@ -1,0 +1,31 @@
+#!/bin/bash
+
+V="$1"
+if [ -z "$V" ] ; then
+    echo "Usage: $0 virtualenv"
+    exit 1
+fi
+
+if [ ! -f $V/bin/activate ] ; then
+    echo "Error: $V is not a virtualenv"
+    exit 2
+fi
+
+# Look for a git repo under this virtualenv
+for i in `find $V -maxdepth 1 -type d` ; do
+    if [ -d $i/.git ] ; then
+        G=`basename $i`
+        break
+    fi
+done
+if [ -z "$G" ] ; then
+    echo "Error: could not find git repository under $V"
+    exit 2
+fi
+
+set -e
+
+cd $V
+source bin/activate
+cd $G
+git-sh
