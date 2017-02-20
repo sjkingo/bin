@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Starts atom inside the given virtualenv (activating it first)
+
+set -e
+
+OLD_PS1="$PS1"
+cd "$1"
+source bin/activate
+export PS1="$PS1$OLD_PS1"
+atom
