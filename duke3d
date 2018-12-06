@@ -1,3 +1,0 @@
-#!/bin/bash
-
-cd ~/.eduke32/autoload && ./eduke32 -usecwd -hduke3d_hrp_polymost.def
