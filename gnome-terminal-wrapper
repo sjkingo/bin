@@ -1,0 +1,17 @@
+#!/bin/sh
+
+day=6
+night=18
+
+h=$(date +"%H")
+
+profile=Dark
+
+if [ $h -ge $day ] ; then
+    profile=Light
+fi
+if [ $h -ge $night ] ; then
+    profile=Dark
+fi
+
+exec gnome-terminal --window-with-profile=$profile
