@@ -1,7 +1,7 @@
 #!/bin/sh
 
-day=6
-night=18
+day=7
+night=17
 
 h=$(date +"%H")
 

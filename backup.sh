@@ -10,6 +10,6 @@ do_mount() {
 }
 
 do_mount
-sudo rsync -avx --delete --stats /home /etc /srv/bigdata /srv/installs /srv/videos /var/lib/pgsql $DEST/Backup
+sudo rsync -avx --delete --stats /home /etc /srv/bigdata /srv/installs /srv/videos /srv/virtualbox /var/lib/pgsql $DEST/Backup
 df $DEST
 sudo umount $DEST

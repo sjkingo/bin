@@ -1,0 +1,5 @@
+#!/bin/bash
+
+nmcli c modify "Wired connection 1" ipv4.gateway "$1"
+nmcli connection down "Wired connection 1"
+nmcli connection up "Wired connection 1"
